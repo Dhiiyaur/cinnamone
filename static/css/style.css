@@ -1,0 +1,78 @@
+*{
+
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* chang color */
+body{
+
+    font-family: "Open Sans", sans-serif;
+}
+
+.nav-link{
+
+    color: black;
+    font-weight: 600;
+
+}
+
+.navbar-brand{
+
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* .collection span{
+
+    color: yellowgreen;
+    padding-left: 2px;
+    font-size-adjust: 15px;
+    font-weight: 700;
+} */
+.item-price span {
+	color: #86bd57;
+	font-size: 110%;
+}
+
+.carousel-cell {
+    width: 28%; /* full width */
+    height: 550px; /* height of carousel */
+    /* margin-right: 10px; */
+  }
+
+@media (max-width: 575.98px) {
+    .navbar-collapse {
+        background: #c03c3c;
+        position: absolute;
+        top: 54px;
+        left: -300px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 300px;
+        height: 100vh !important;
+        transition: all 0.3s ease;
+        display: block;
+    }
+    .navbar-collapse.collapsing {
+        height: 100vh;
+        margin-right: 50%;
+        transition: all 0.3s ease;
+        display: block;
+    }
+    .navbar-collapse.show {
+        left: 0;
+    }
+
+    .carousel-cell { 
+        width: 80%; 
+        height: 490px;
+    }
+}
+
+/* .scrollme {
+    overflow-x: auto;
+} */

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <section class="mb-4 pt-5">
+        <section class="pt-5">
+            <section class="pt-5">
+                <h1 class="text-uppercase">{% trans "Verify Your E-mail Address" %}</h1>
+
+                <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process.{% endblocktrans %}</p>
+
+            </section>
+        </section>
+    </section>
+</div>
+{% endblock %}

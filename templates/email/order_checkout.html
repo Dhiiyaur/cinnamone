@@ -1,0 +1,66 @@
+{% autoescape off %}
+Hi {{ username }},
+
+Thank you for your order... 
+
+<p>name             : {{ first_name }} {{ last_name }}<br>
+Addres           : {{ address }}<br>
+Phone number     : {{ Phone }}<br>
+Payment Method   : {{ Payment_option }}</p>
+
+<div class="container">
+    <section class="pt-5">
+        <section class="pt-5">
+            <div class="table-responsive text-nowrap">
+
+                <h2> Order Summary </h2>
+                <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for order_item in object.item.all %}
+                <tr>
+
+                    <th scope="row"> {{ forloop.counter }}</th>
+                    <td>
+                        
+                        {{ order_item.item.title }}
+                    </td>
+                    <td>Rp. {{ order_item.item.price }}</td>
+                    <td> 
+                        
+                        {{ order_item.quantity }} 
+                        
+                    </td>
+                    <td>
+                        {% if order_item.item.discont_price %}
+                            Rp. {{ order_item.get_total_discont_price }}
+                        {% else %}
+                            Rp. {{order_item.get_total_price }}
+                        {% endif %}
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+
+                <tr>
+                    <td colspan="3"></td>
+                    <td><b>Total Price</b></td>
+                    <td><b>Rp. {{ object.total_price }}</b></td>
+                </tr>        
+                </tbody>
+                </table>
+
+            </div>
+        </section>
+    </section>
+</div>
+
+{% endautoescape %}

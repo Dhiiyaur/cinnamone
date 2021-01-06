@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+  <section class="product-item mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+  
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+  
+            <img src="{{ object.image.url }}" class="img-fluid" alt="" >
+  
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+  
+            <!--Content-->
+            <div class="p-4">
+  
+              <div class="mb-3">
+                <a href="">
+                  <span class="badge purple mr-1"> {{ object.category }} </span>
+                </a>
+              </div>
+  
+              <p class="lead font-weight-bold text-capitalize">{{ object.title }}</p>
+              {% if object.discount_price %}
+              <p class="item-price"><strike>Rp. {{ object.price }}</strike> <span class="ml-2">Rp. {{ object.discount_price }}</span></p>
+              {% else %}
+              <p class="item-price">Rp. {{ object.price }} </p>
+              {% endif %}
+  
+              <p class="lead">Description</p>
+  
+              <p>
+                  {{ object.description}}
+              </p>
+  
+              <!-- {% comment %} 
+              
+              <form class="d-flex justify-content-left">
+                <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+                <button class="btn btn-primary btn-md my-0 p" type="submit">
+                  Add to cart
+                  <i class="fas fa-shopping-cart ml-1"></i>
+                </button>
+  
+              </form> 
+              {% endcomment %} -->
+  
+              <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p" >Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+  
+            </div>
+            <!--Content-->
+  
+          </div>
+          <!--Grid column-->
+  
+        </div>
+        <!--Grid row-->
+  
+      </div>
+  </section>
+
+  
+{% endblock content %}

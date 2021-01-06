@@ -1,0 +1,10 @@
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+
+### secret code
+# test
+
+setting/secret.py
