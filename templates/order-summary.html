@@ -128,11 +128,12 @@
                     <!-- price item -->
                     <p class="mb-0"><span><strong id="summary">
 
-                        {% if order_item.item.discont_price %}
+
+                      {% if order_item.item.discount_price %}
                         Rp. {{ order_item.get_total_discont_price }}
-                        {% else %}
+                      {% else %}
                         Rp. {{order_item.get_total_price }}
-                        {% endif %}
+                      {% endif %}
 
                     </strong></span></p class="mb-0">
                   </div>
